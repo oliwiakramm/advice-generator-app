@@ -1,0 +1,98 @@
+@use "../abstracts" as a;
+
+.advice {
+  background-color: a.$card-clr;
+  @include a.flex;
+  padding: 2.5rem 1.2rem 3.6rem;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  max-width: 27rem;
+  min-height: 20rem;
+
+  &__num {
+    color: a.$accent-clr;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    color: a.$text-clr;
+    font-size: 1.45rem;
+    line-height: 1.44;
+    margin-bottom: 1.3rem;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease-in, opacity 0.2s ease-in;
+
+    &.generated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: -2rem;
+    border: none;
+    background-color: a.$accent-clr;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    @include a.flex;
+    transition: box-shadow 0.1s ease-in;
+
+    &[disabled] {
+      filter: grayscale(1);
+      cursor: not-allowed;
+    }
+
+    & img {
+      width: 1.5rem;
+      transition: transform 0.1s ease-in;
+    }
+
+    @include a.media-hover-effect {
+      &:hover {
+        box-shadow: 0px 0px 20px 13px rgb(82, 255, 168, 0.25);
+
+        & img {
+          transform: translateY(-3px);
+        }
+      }
+
+      &[disabled]:hover {
+        box-shadow: 0 0 0 0;
+
+        & img {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  @include a.media-breakpoint-up(62em) {
+    & {
+      max-width: 33.7rem;
+      padding: 3.1rem 2.5rem 4.05rem;
+    }
+
+    &__num {
+      font-size: 0.85rem;
+      letter-spacing: 3.5px;
+    }
+
+    &__text {
+      font-size: 1.7rem;
+      line-height: 1.4;
+      margin-bottom: 2.5rem;
+    }
+
+    &__btn {
+      bottom: -2.1rem;
+    }
+  }
+}

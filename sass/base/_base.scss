@@ -1,0 +1,18 @@
+@use "../abstracts" as a;
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: a.$txt-font;
+  background-color: a.$bg-clr;
+}
+
+.main {
+  margin: -2.1rem 1rem 4rem;
+
+  @include a.media-breakpoint-up(62em) {
+    & {
+      margin-top: 2.8rem;
+    }
+  }
+}
