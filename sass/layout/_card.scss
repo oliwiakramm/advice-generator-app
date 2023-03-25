@@ -3,7 +3,7 @@
 .advice {
   background-color: a.$card-clr;
   @include a.flex;
-  padding: 2.5rem 1.2rem 3.6rem;
+  padding: 2.4rem 1.2rem 3.6rem;
   border-radius: 15px;
   text-align: center;
   position: relative;
@@ -88,7 +88,7 @@
     &__text {
       font-size: 1.7rem;
       line-height: 1.4;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.3rem;
     }
 
     &__btn {
